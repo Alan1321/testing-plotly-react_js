@@ -35,7 +35,7 @@ const getData = () =>{
     const grid_len = lat.length
     const zData = []
     var pointer = 0;
-    console.log("starting")
+    console.log(`starting...data_length:${data.length}`)
     for(i=0;i<data.length;i+=parseInt(data.length/divide_by)){
       var a = Array.apply(null, Array(grid_len)).map(Number.prototype.valueOf,0);
       a[pointer] = data[i].Data
@@ -58,34 +58,8 @@ const getData = () =>{
       height: 1000,
       willReadFrequently:true
     };
-    Plotly.newPlot('chart',data,layout)
+    Plotly.newPlot('wassupman',data,layout)
   })
-  
-  // const zz = []
-
-  // for(var i = 0;i<10;i++){
-  //   var to_push = []
-  //   for(var j = 0;j<10;j++){
-  //     to_push.push(j*i)
-  //   }
-  //   zz.push(to_push)
-  // }
-
-  // data = [{
-  //   z: zData,
-  //   x: lat,
-  //   y: lon,
-  //   type: 'surface'
-  // }];
-  // console.log(data)
-  // var layout = {
-  //   title: 'My Plot',
-  //   autosize: false,  
-  //   width: 1000,
-  //   height: 1000,
-  //   willReadFrequently:true
-  // };
-  // Plotly.newPlot('chart',data,layout)
 }
 
 
@@ -97,7 +71,7 @@ function App() {
   return (
     <div className="App" style={{display:'flex'}}>
       <div style={{width:'50%',backgroundColor:'red'}}>123</div>
-      <div id="wassupman" >112{getData()}</div>
+      <div id="wassupman" style={{backgroundColor:'blue'}}>112{getData()}</div>
       
     </div>
   );
